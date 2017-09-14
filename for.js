@@ -15,7 +15,7 @@ var a=0;
 for( var i = 2; i <= 100; i++){
     A[i] = A[i - 1] + A[i - 2] ;
    
-    console.log(A);
+    console.log(A[i]);
 }
 
 var b = [1, 1];
