@@ -11,7 +11,7 @@ var o = Object.create(null, {
     },
 
     bar: {
-        enumerable: true,
+        enumerable: false,
         writable: true,
         configurable: true,
         value: 'world'
@@ -19,3 +19,4 @@ var o = Object.create(null, {
 });
 
 console.log(Object.entries(o));
+console.log(Object.getOwnPropertyNames(o));
