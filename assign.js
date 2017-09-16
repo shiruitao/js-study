@@ -1,3 +1,6 @@
+/**
+ * 2017-9-16   Shi Ruitao
+ */
 var o = Object.create(null, {
     foo: {
         enumerable: true,
