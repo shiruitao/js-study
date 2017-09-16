@@ -24,3 +24,48 @@ obj.func();
 obj.age();
 
 obj.func();
+
+var o = Object.create(null, {
+    foo: {
+        writable: true,
+        configurable: true,
+        value: 'hello'
+    },
+    bar: {
+        configurable: false,
+        get: function() { return 10; },
+        set: function(value) {           
+            console.log('Setting `o.bar` to', value );
+        }
+    }
+});
+console.log(Object.getOwnPropertyDescriptor(o, 'foo'));
+console.log(JSON.stringify(Object.getOwnPropertyDescriptor(o, 'foo')));
+console.log(JSON.stringify(Object.getOwnPropertyDescriptor(o, 'bar')));
+
+
+o.name = 'abc';
+console.log(Object.keys(o));
+console.log(`type o is ${typeof o}, variable o is ${Object.getPrototypeOf(o)}`);
+
+var arr = ['a', 'b', 'c'];
+arr['name'] = 'shiruitao';
+arr.age = 11;
+console.log(Object.getOwnPropertyDescriptor(arr, 'name'));
+
+console.log(Object.keys(arr));
+console.log(arr['0']);
+console.log(arr.name);//?
+console.log(`type arr is ${typeof arr},variable arr is ${Object.getPrototypeOf(arr)}`)
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+var F = function (){
+    console.log('abc');
+};
+F.age = 20;
+console.log(Object.keys(F));
+console.log(F.age);
+F();
+
+console.log(`type F is ${ typeof F },variable arr is ${Object.getPrototypeOf(F)}`);
