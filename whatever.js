@@ -19,8 +19,8 @@ Object.defineProperty(a, 'len', {
     //writable: true,
     enumerable:true,
     configurable: true,
-    set: function() { return this.arr.length; },
+    get: function() { return this.arr.length; },
 })
 
-a.len = 10;
-console.log(a.arr.length);
+a.arr.length = 10;
+console.log(a.len);
