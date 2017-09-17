@@ -9,8 +9,5 @@ var func = function(){
     }
     return obj;
 }
-var a = func();
-var b = func();
-var c = func();
-var d = func();
-console.log(a, b, c, d);
+
+console.log(func(), func(), func(), func());
