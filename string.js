@@ -67,11 +67,11 @@ console.log(str.repeat(0));
 console.log(str.repeat(2.5));
 
 console.log('---------replace---------');
-console.log(str.replace('rui', 'ABC'));
+console.log(str.replace('rui', 'ABC'));  //
 
 console.log('----------slice---------');
 console.log(str.slice(2, 6));
-console.log(str.slice(-4, -1)); // 倒数
+console.log(str.slice(-4, -1)); // 倒着数
 console.log(str.slice(4, -2));
 console.log(str.slice(-2, 4));
 console.log(str.slice(-2, 20));
@@ -81,13 +81,13 @@ console.log('----------splits---------');
 console.log(str.split('i', 3));
 console.log(str.split('i', 13));
 console.log(str.split('i', 50));
-console.log(str.split('i', -1)); // 不起作用
+console.log(str.split('i', -1)); // 负数不起作用
 console.log(str.split(' ', 0));
 
 console.log('----------startwith---------');
 console.log(str.startsWith('shirui'));
 console.log(str.startsWith('rui', 3));
-console.log(str.startsWith('s', -10)); // 默认为0
+console.log(str.startsWith('s', -10)); // 负数默认为0
 console.log(str.startsWith('rui'));
 
 console.log('----------substr---------');
@@ -96,7 +96,7 @@ console.log(str.substr(-6, 1)); //（起始位置，length）
 console.log(str.substr(3, -1));
 
 console.log('----------trim---------');
-console.log(str.trim());      // 去掉空格
+console.log(str.trim());      // 去掉起始和末尾空格
 
 console.log('----------trimleft---------');
 console.log(str.trimLeft());
