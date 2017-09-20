@@ -2,11 +2,8 @@
  * 2017-9-20    Shi Ruitao
  */
 
-function animal() {};
-animal.prototype = {
     a: 'breathe',
     b: 'move'
-}
 /**---------------2--bird--------------- */
 function bird() {};
 bird.prototype = {
@@ -98,3 +95,6 @@ console.log(Object.entries(obj4));
 obj4.swim();
 obj4.breath();
 obj4.eat();
+
+var a = Object.create(function(){},{})
+console.log(typeof a)
