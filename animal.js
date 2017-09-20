@@ -2,8 +2,13 @@
  * 2017-9-20    Shi Ruitao
  */
 
-    a: 'breathe',
-    b: 'move'
+function animal() {
+    animal.prototype = {
+        a: 'breathe',
+        b: 'move'
+    }
+};
+animal();
 /**---------------2--bird--------------- */
 function bird() {};
 bird.prototype = {
