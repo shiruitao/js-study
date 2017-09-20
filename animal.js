@@ -103,3 +103,4 @@ obj4.eat();
 
 var a = Object.create(function(){},{})
 console.log(typeof a)
+
