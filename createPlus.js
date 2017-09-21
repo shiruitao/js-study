@@ -46,15 +46,15 @@ delete obj.foo;
 console.log(obj.foo);
 
 console.log('-----------------seal----------------');
-//Object.seal(a);
+Object.seal(a);  //not extensible
 a.name = 'rui';
-delete a.name;
+//delete a.name;
 console.log(`a.name -> ${a.name}`);
 
 Object.length = 2;
 console.log(Object.length);
 
-Object.defineProperty(a, 'get', {
+Object.defineProperty(a, 'get', {  //error 49
     enumerable: true,
     writable: true,
     configurable: true,
