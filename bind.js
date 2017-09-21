@@ -5,11 +5,11 @@ console.log('-----------apply------------')
 var b = {
     name: 'abc',
 };
-var a = function(x, y){
+var a = function(){
     this.age = 2;
-    return this.age+ x + y;
+    return this.age;
 };
-console.log(a.apply(b, [2,3]), b);
+console.log(a.apply(b), b);
 
 console.log('-----------bind------------')
 var c = {
