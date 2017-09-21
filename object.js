@@ -11,18 +11,17 @@ var obj = {
         console.log(`age => ${ this.age }, boon => ${ this.boon }, func => ${ this.func }`);
     }
 };
-
+console.log('---------------------obj.func()--------------------')
 obj.func();
 
-//外部
-obj.age = function(){
+// 外部
+obj.a = function(){
     this.age = 'a';
 }
-
+console.log('---------------------obj.func()--------------------')
 obj.func();
-
-obj.age();
-
+obj.a();
+console.log('---------------------obj.func()--------------------')
 obj.func();
 
 var o = Object.create(null, {
