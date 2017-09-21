@@ -4,12 +4,12 @@
 
 var person = function(age){
     this.age = age;
-} 
+}
 person.prototype.getAge = function(){
     return this.age;
 };
 var shi = new person(2);
-var rui = new person(22);
+var rui = new person(22); // 
 console.log(shi.getAge(), rui.getAge() );
 console.log('-----------------------------')
 shi.c = function(){
