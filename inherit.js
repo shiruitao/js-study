@@ -7,6 +7,7 @@ console.log('-------------------(1)-----------------');
 function animal(){
 
 };
+animal.b = 'a';
 animal.prototype.species = 'manmal'
 
 function cat(name){
@@ -18,7 +19,7 @@ cat.species = 'abc';
 
 console.log(animal.prototype.species);
 
-console.log(a);
+console.log(a.b);
 
 /*
 console.log('-------------------(2)-----------------');
@@ -92,6 +93,7 @@ function extend2(Child, Parent) {
     c.uber = p;
 }
 */
+/*
 console.log('-------------------(7)-----------------');
 function object(o) {
     function F() {};
@@ -99,7 +101,8 @@ function object(o) {
     F.prototype = o;
     return new F();
 }
-
+*/
+/*
 console.log('-------------------拷贝继承-----------------');
 function extend2(Child, Parent) {
     var p = Parent.prototype;
@@ -110,6 +113,12 @@ function extend2(Child, Parent) {
     c.uber = p;
 }
 
+function a(){
+
+}
+*/
+
+/*
 console.log('-------------------非构造函数继承-----------------');
 function object(o) {
 function F() {}
@@ -145,3 +154,4 @@ function deepCopy(p, c) {
     }
     return c;
   }
+*/
