@@ -32,11 +32,6 @@ module.exports = app => {
       const g = yield this.service.home.baidu();
       this.ctx.body = g;
     }
-    * test() {
-      const c = yield this.service.test.test();
-      const d = yield this.service.home.test();
-      this.ctx.body = c + d;
-    }
     * lodash() {
       const f = yield this.service.lodash.lodash();
       this.ctx.body = f;
