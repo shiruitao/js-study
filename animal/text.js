@@ -57,5 +57,19 @@ function f() {
 function fu(){
   console.log(2)
 } 
-f();
-fu()
+//f();
+fu();
+console.log('---------slice--------')
+var array6 = [1, 2, 3, 4, 5, 6];
+console.log(_.slice(array6, 1, 3));
+
+console.log('---------sortedIndex--------')
+console.log(_.sortedIndex([1, 2, 3, 5, 6], 4));
+
+console.log('---------sortedIndexBy--------')
+var objects = [{ 'x': 4 }, { 'x': 5 }];
+console.log(_.sortedIndexBy(objects, { 'x': 5 }, function(o) { return o.x; }));
+console.log(_.sortedIndexBy(objects, { 'x': 5 }, 'x'));
+
+console.log('---------sortedIndexOf--------')
+
