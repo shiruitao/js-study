@@ -11,10 +11,11 @@ module.exports = app => {
   app.get('/sohu', 'home.sohu');
   app.get('/test', 'home.test');
   app.get('/baidu', 'home.baidu');
-  app.get('/lodash', 'home.lodash');
+  app.get('/lodash1', 'home.lodash');
   app.get('/taobao', 'home.taobao');
   app.get('/home1', 'home.home');
   app.get('/github', 'home.git');
   app.post('/find', 'home.findIndex');
   app.post('/date', 'home.time');
+  app.get('/lodash', 'lodash.lodash');
 };

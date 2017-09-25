@@ -7,9 +7,10 @@
 module.exports = app => {
   class HomeController extends app.Controller {
     * index() {
-      const a = this.ctx.helper.foo(this.ctx.request.query.c, this.ctx.request.query.d);
-      const b = this.ctx.helper.con(this.ctx.request.query.e);
-      this.ctx.body = a + b;
+      const a = this.ctx.helper.foo(this.ctx.request.query.c);
+      const b = this.ctx.helper.foo(this.ctx.request.query.d);
+      const e = this.ctx.helper.con(this.ctx.request.query.e);
+      this.ctx.body = a + b + e;
     }
     * time() {
       this.ctx.body = yield this.service.home.time();

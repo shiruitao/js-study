@@ -19,6 +19,12 @@ module.exports = app => {
         { user: 'pebbles', active1: false }];
       return _.findIndex(users, 'active1');
     }
+    * sortedIndexOf() {
+      return _.sortedIndexOf([ 4, 5, 6, 5, 4, 5, 7, 8, 9 ], 5);
+    }
+    * sortedLastIndex() {
+      return _.sortedLastIndex([ 4, 5, 5, 5, 6 ], 5);
+    }
   }
   return Lodash;
 };
