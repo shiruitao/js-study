@@ -13,9 +13,13 @@ module.exports = app => {
     * get() {
       this.ctx.body = yield this.service.test.get(this.ctx.request.body);
     }
+    * get3() {
+      this.ctx.body = yield this.service.test.get3();
+    }
     * update() {
       this.ctx.body = yield this.service.test.update(this.ctx.request.body);
     }
+
     * create1() {
       this.ctx.body = yield this.service.test.create1(this.ctx.request.body);
     }
@@ -27,6 +31,22 @@ module.exports = app => {
     }
     * update1() {
       this.ctx.body = yield this.service.test.update1(this.ctx.request.body);
+    }
+
+    * create2() {
+      this.ctx.body = yield this.service.test.create2(this.ctx.request.body);
+    }
+    * delete2() {
+      this.ctx.body = yield this.service.test.delete2(this.ctx.request.body);
+    }
+    * get2() {
+      this.ctx.body = yield this.service.test.get2(this.ctx.request.body);
+    }
+    * update2() {
+      this.ctx.body = yield this.service.test.update2(this.ctx.request.body);
+    }
+    * select2() {
+      this.ctx.body = yield this.service.test.select2(this.ctx.request.body);
     }
   }
   return TestController;

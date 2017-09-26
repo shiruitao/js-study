@@ -27,4 +27,12 @@ module.exports = app => {
   app.post('/delete1', 'test.delete1');
   app.post('/get1', 'test.get1');
   app.post('/update1', 'test.update1');
+
+  app.post('/create2', 'test.create2');
+  app.post('/delete2', 'test.delete2');
+  app.post('/get2', 'test.get2');
+  app.post('/update2', 'test.update2');
+  app.post('/select2', 'test.select2');
+
+  app.post('/get3', 'test.get3');
 };
