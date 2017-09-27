@@ -6,6 +6,10 @@ const knex = require('knex')({
 
 module.exports = app => {
   app.beforeStart(function* () {
+    const s = new Date();
+    const ctx = app.createAnonymousContext();
+    ctx.logger.info(1000, s);
+    ctx.logger.warn('warnning!');
     const hasUser = yield app.mysql.query(knex.schema.hasTable('user').toString());
     if (hasUser.length === 0) {
       const userSchema = knex.schema.createTableIfNotExists('user', function(table) {
@@ -16,10 +20,7 @@ module.exports = app => {
         table.charset('utf8');
       });
       yield app.mysql.query(userSchema.toString());
-      const users = knex.schema.alterTable('user', function(t) {
-        t.unique('name');
-      });
-      yield app.mysql.query(users.toString());
+      yield ctx.helper.unique(app, 'user', 'name');
     }
 
     const User = yield app.mysql.query(knex.schema.hasTable('student').toString());
@@ -33,6 +34,7 @@ module.exports = app => {
         table.charset('utf8');
       });
       yield app.mysql.query(userSchema.toString());
+      yield ctx.helper.unique(app, 'student', 'name');
     }
 
     const tab = yield app.mysql.query(knex.schema.hasTable('teacher').toString());
@@ -46,6 +48,8 @@ module.exports = app => {
         table.charset('utf8');
       });
       yield app.mysql.query(userSchema.toString());
+      yield ctx.helper.unique(app, 'teacher', 'name');
     }
   });
 };
+
