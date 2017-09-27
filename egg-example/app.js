@@ -16,7 +16,6 @@ module.exports = app => {
         table.charset('utf8');
       });
       yield app.mysql.query(userSchema.toString());
-      yield app.mysql.query(userSchema.toString());
       const users = knex.schema.alterTable('user', function(t) {
         t.unique('name');
       });

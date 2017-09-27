@@ -6,47 +6,33 @@ const knex = require('knex')({
 
 module.exports = app => {
   app.beforeStart(function* () {
-    const hasUser = yield app.mysql.query(knex.schema.hasTable('user').toString());
-    if (hasUser.length === 0) {
-      const userSchema = knex.schema.createTableIfNotExists('user', function(table) {
-        table.increments();
-        table.string('name').notNullable().defaultTo('');
-        table.integer('age').notNullable().defaultTo(0);
-        table.timestamp('create_at').defaultTo(knex.fn.now());
-        table.charset('utf8');
-      });
-      yield app.mysql.query(userSchema.toString());
-      yield app.mysql.query(userSchema.toString());
-      const users = knex.schema.alterTable('user', function(t) {
-        t.unique('name');
-      });
-      yield app.mysql.query(users.toString());
-    }
-
-    const User = yield app.mysql.query(knex.schema.hasTable('student').toString());
+    const ctx = app.createAnonymousContext();
+    const User = yield app.mysql.query(knex.schema.hasTable('goods').toString());
     if (User.length === 0) {
-      const userSchema = knex.schema.createTableIfNotExists('student', function(table) {
+      const userSchema = knex.schema.createTableIfNotExists('goods', function(table) {
         table.increments();
         table.string('name').notNullable().defaultTo('');
-        table.integer('age').notNullable().defaultTo(0);
-        table.integer('score').notNullable().defaultTo(0);
+        table.integer('number').notNullable().defaultTo(0);
+        table.string('type').notNullable().defaultTo('');
         table.timestamp('create_at').defaultTo(knex.fn.now());
         table.charset('utf8');
       });
       yield app.mysql.query(userSchema.toString());
+      yield ctx.helper.unique(app, 'goods', 'name');
     }
 
-    const tab = yield app.mysql.query(knex.schema.hasTable('teacher').toString());
+    const tab = yield app.mysql.query(knex.schema.hasTable('customer').toString());
     if (tab.length === 0) {
-      const userSchema = knex.schema.createTableIfNotExists('teacher', function(table) {
+      const userSchema = knex.schema.createTableIfNotExists('customer', function(table) {
         table.increments();
         table.string('name').notNullable().defaultTo('');
         table.integer('age').notNullable().defaultTo(0);
-        table.string('course').notNullable().defaultTo('');
+        table.string('phone').notNullable().defaultTo('');
         table.timestamp('cerate_at').defaultTo(knex.fn.now());
         table.charset('utf8');
       });
       yield app.mysql.query(userSchema.toString());
+      yield ctx.helper.unique(app, 'customer', 'name');
     }
   });
 };

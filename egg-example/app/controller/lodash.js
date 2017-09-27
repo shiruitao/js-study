@@ -3,7 +3,6 @@
  */
 
 'use strict';
-const _ = require('lodash');
 module.exports = app => {
   class Lodash extends app.Service {
     * lodash() {
