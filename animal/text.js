@@ -71,5 +71,24 @@ var objects = [{ 'x': 4 }, { 'x': 5 }];
 console.log(_.sortedIndexBy(objects, { 'x': 5 }, function(o) { return o.x; }));
 console.log(_.sortedIndexBy(objects, { 'x': 5 }, 'x'));
 
-console.log('---------sortedIndexOf--------')
+console.log('---------sortedLastIndexBy---------')
+var objects = [{ 'x': 4 }, { 'x': 5 }];
+console.log(_.sortedLastIndexBy(objects, { 'x': 4 }, function(o) { return o.x; }));
+console.log(_.sortedLastIndexBy(objects, { 'x': 4 }, 'x'));
 
+console.log('---------sorteduniq--------')
+console.log(_.sortedUniq([1, 1, 2, 2, 4, 4, 5]));
+
+console.log('---------takeRightWhile--------')
+//  Elements are taken until predicate returns falsey
+var users = [
+  { 'user': 'barney',  'active': true },
+  { 'user': 'fred',    'active': false },
+  { 'user': 'pebbles', 'active': false }
+];
+console.log(_.takeRightWhile(users, function(o) { return !o.active; }));
+console.log('---------------')
+console.log(_.takeRightWhile(users, { 'user': 'pebbles', 'active': false }));
+console.log('---------------')
+console.log(_.takeRightWhile(users, ['active', false]));
+console.log('---------takeRightWhile--------')
