@@ -17,7 +17,7 @@ module.exports = app => {
         table.increments();
         // table.string('name').notNullable();
         table.string('WeChat').notNullable();
-        table.integer('投票次数').notNullable().defaultTo(0);
+        table.integer('votes').notNullable().defaultTo(0);
         table.integer('type').notNullable().defaultTo(0);
         table.integer('mobile').notNullable();
         table.string('address').notNullable();
