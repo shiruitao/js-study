@@ -19,7 +19,7 @@ module.exports = app => {
         table.string('WeChat').notNullable();
         table.integer('votes').notNullable().defaultTo(0);
         table.integer('type').notNullable().defaultTo(0);
-        table.integer('mobile').notNullable();
+        table.bigInteger('mobile').notNullable();
         table.string('address').notNullable();
         table.string('production').notNullable();
         table.timestamp('create_at').defaultTo(knex.fn.now());

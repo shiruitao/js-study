@@ -22,7 +22,7 @@ module.exports = app => {
     }
     * show() {
       try {
-        yield app.mysql.select();
+        yield app.mysql.select('photo');
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
