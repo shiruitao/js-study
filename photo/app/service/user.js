@@ -6,7 +6,7 @@
 const knex = require('knex')({
   client: 'mysql',
 });
-const b = 3;
+const MAX = 3;
 module.exports = app => {
   class User extends app.Service {
     * register(param) {
@@ -52,14 +52,20 @@ module.exports = app => {
         where: { id },
         columns: 'votes',
       });
-      if (a < b) {
+      if(votes < MAX){
         try {
-          yield app.mysql.update('user', {
-            votes: a - 1,
-          });
-        } catch (e) {
-          return false;
-        }
+            yield app.mysql.update('user', {
+              votes: votes + 1,
+            });
+            yield app.mysql.update('photo', {
+              count: count + 1,
+            });
+          } catch (e) {
+            this.ctx.logger.error(e);
+            return false;
+          }
+      }
+    }
       }
       return true;
     }
