@@ -1,0 +1,72 @@
+
+  <view>
+    <view class="display">
+      <text class="test">姓名：时瑞涛</text>
+      <text class="test">性别：男</text>
+      <text class="test">年龄：{{age}}</text>
+      <text class="test">出生年月：1995-10-10</text>
+      <text class="test">住址：河北省保定</text>
+      <text class="test">学校：华北电力大学科技学院</text>
+      <text class="test">专业班级：计算机14K2</text>
+    </view>
+    <text class="test">　</text>
+    <view class="display">
+      <text class="test">手机号: 1234567890</text>
+    </view>
+    <!-- <button class = "button1" hover-class = "other-button-hover" >按钮1</button> -->
+    <button class="button" hover-class="other-button-hover" bindtap="onTap">年龄+1</button>
+
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view>switch</view>
+      <switch name="switch"/>
+
+      <view>滑动条</view>
+      <slider name="slider" show-value/>
+
+      <view>input</view>
+      <input class="input" name="input" placeholder="输入框"/>
+
+      <view>radio</view>
+      <radio-group name="radio-group">
+        <label>
+          <radio value="radio1"/>radio1</label>
+        <label>
+          <radio value="radio2"/>radio2</label>
+      </radio-group>
+
+      <view>checkbox-group</view>
+      <checkbox-group name="checkbox-group" bindchange="check">
+        <label  wx:for="{{items}}" wx:key="index">
+          <checkbox class="check" color="red" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </checkbox-group>
+
+      <view>checkbox</view>
+      <checkbox-group name="checkbox">
+        <label>
+          <checkbox value="checkbox1"/>checkbox1</label>
+        <label>
+          <checkbox value="checkbox2"/>checkbox2</label>
+      </checkbox-group>
+
+      <button formType="submit">Submit</button>
+      <button formType="reset">Reset</button>
+    </form>
+    <!--input.wxml-->
+    <input class="input" placeholder="这是一个可以自动聚焦的input" auto-focus/>
+
+    <input class="input" placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}"/>
+    <button bindtap="bindButtonTap">使得输入框获取焦点</button>
+
+    <input class="input" maxlength="10" placeholder="最大输入长度10"/>
+
+    <view class="section__title">你输入的是：{{inputValue}}</view>
+    <input class="input" bindinput="bindKeyInput" placeholder="输入同步到view中"/>
+
+    <input class="input" bindinput="bindReplaceInput" placeholder="连续的两个1会变成2"/>
+    
+    <input class="input" password type="number" placeholder="password"/>
+
+    <input type="digit" placeholder="带小数点的数字键盘"/>
+
+  </view>
