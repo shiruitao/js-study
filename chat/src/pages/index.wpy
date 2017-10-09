@@ -4,7 +4,27 @@
   font-size: 20px;
   font-style: italic;
 }
-
+.text {
+  // display: flex;
+  font-size: 20px;
+  color: red;
+// margin: 10px 10px 10px 10px;
+  // padding: 10px 20px 30px 50;  
+  margin-top: 10px; 
+}
+.view {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  justify-content: center;
+  align-items: center; 
+  background-color: lightcyan;
+  height: 300px;
+  border: 2px dashed red;
+  // border-radius: 6px;
+  // border-bottom: 1px solid red;
+  border-top-left-radius: 6px
+}
 .test1 {
   color: pink;
   font-size: 10px;
@@ -45,14 +65,14 @@
 </style>
 <template>
   <view>
-    <view class="display">
-      <text class="test">姓名：时瑞涛</text>
-      <text class="test">性别：男</text>
-      <text class="test">年龄：{{age}}</text>
-      <text class="test">出生年月：1995-10-10</text>
-      <text class="test">住址：河北省保定</text>
-      <text class="test">学校：华北电力大学科技学院</text>
-      <text class="test">专业班级：计算机14K2</text>
+    <view class="view">
+      <text class="text">姓名：时瑞涛</text>
+      <text class="text">性别：男</text>
+      <text class="text">年龄：{{age}}</text>
+      <text class="text">出生年月：1995-10-10</text>
+      <text class="text">住址：河北省保定</text>
+      <text class="text">学校：华北电力大学科技学院</text>
+      <text class="text">专业班级：计算机14K2</text>
     </view>
     <text class="test">　</text>
     <view class="display">
@@ -98,26 +118,89 @@
       <button formType="reset">Reset</button>
     </form>
     <!--input.wxml-->
-    <input class="input" placeholder="这是一个可以自动聚焦的input" auto-focus/>
+    <!-- <input class="input" placeholder="这是一个可以自动聚焦的input" auto-focus/> -->
 
     <input class="input" placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" />
     <button bindtap="bindButtonTap">使得输入框获取焦点</button>
 
-    <input class = "input" maxlength="10" placeholder="最大输入长度10" />
+    <input class="input" maxlength="10" placeholder="最大输入长度10" />
 
     <view class="section__title">你输入的是：{{inputValue}}</view>
-    <input class = "input" bindinput="bindKeyInput" placeholder="输入同步到view中" />
+    <input class="input" bindinput="bindKeyInput" placeholder="输入同步到view中" />
 
-    <input class = "input" bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
-    
-    <input class = "input" password type="number" placeholder="password"/>
+    <input class="input" bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
 
-    <input type="digit" placeholder="带小数点的数字键盘"/>
+    <input class="input" password type="number" placeholder="password" />
 
+    <input class="input" type="digit" placeholder="带小数点的数字键盘" />
+
+    <input class="input" type="idcard" placeholder="身份证输入键盘" />
+
+    <input class="input" placeholder-style="color:red" placeholder="占位符字体是红色的" />
+
+    <view class="container">
+      <video src="{{src}}"></video>
+      <button bindtap="bindButton">获取视频</button>
+    </view>
+
+    <view class="container">
+      <image src="{{src}}" />
+      <button @tap="bind">图片</button>
+    </view>
+
+    <view class="container">日期选择器</view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{date}}
+      </view>
+    </picker>
+
+    <view>
+      <view>{{year}}年{{month}}月{{day}}日</view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+
+    <textarea class="input" bindblur="bindTextAreaBlur" auto-height placeholder="自动变高" />
+
+    <!-- audio.wxml -->
+    <view class="container">
+      <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+      <button type="primary" bindtap="audioPlay">播放</button>
+      <button type="primary" bindtap="audioPause">暂停</button>
+      <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+      <button type="primary" bindtap="audioStart">回到开头</button>
+    </view>
   </view>
 </template>
 
 <script>
+const date = new Date()
+const years = []
+const months = []
+const days = []
+
+for (let i = 1990; i <= date.getFullYear(); i++) {
+  years.push(i)
+}
+
+for (let i = 1; i <= 12; i++) {
+  months.push(i)
+}
+
+for (let i = 1; i <= 31; i++) {
+  days.push(i)
+}
+
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
@@ -133,53 +216,121 @@ export default class Index extends wepy.page {
       { name: 'ENG', value: '英国' },
       { name: 'TUR', value: '法国' }
     ],
-    inputValue: 1
+    inputValue: 1,
+    years: years,
+    year: date.getFullYear(),
+    months: months,
+    month: 2,
+    days: days,
+    day: 2,
+    value: [9999, 1, 1],
+
+    poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
+    name: '此时此刻',
+    author: '许巍',
+    src: ''
   }
+
   // check(e) {
   //   console.log('checkbox发生change事件，携带value值为：', e.detail.value)
   // }
+  methods = {
+    formSubmit(e) {
+      console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    },
+    formReset() {
+      console.log('form发生了reset事件')
+    },
 
-  formSubmit(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-  }
-  formReset() {
-    console.log('form发生了reset事件')
-  }
+    onTap() {
+      let self = this
+      self.age++
+    },
+    bindButtonTap() {
+      this.setData({
+        focus: true
+      })
+    },
+    bindKeyInput(e) {
+      let self = this
+      self.inputValue = e.detail.value
+      console.log(self.inputValue)
+    },
+    bindReplaceInput(e) {
+      var value = e.detail.value
+      var pos = e.detail.cursor
+      if (pos !== -1) {
+        // 光标在中间
+        var left = e.detail.value.slice(0, pos)
+        // 计算光标的位置
+        pos = left.replace(/11/g, '2').length
+      }
 
-  onTap() {
-    let self = this
-    self.age++
-  }
-  bindButtonTap() {
-    this.setData({
-      focus: true
-    })
-  }
-  bindKeyInput(e) {
-    let self = this
-    self.inputValue = e.detail.value
-    console.log(self.inputValue)
-  }
-  bindReplaceInput(e) {
-    var value = e.detail.value
-    var pos = e.detail.cursor
-    if (pos !== -1) {
-      // 光标在中间
-      var left = e.detail.value.slice(0, pos)
-      // 计算光标的位置
-      pos = left.replace(/11/g, '2').length
+      // 直接返回对象，可以对输入进行过滤处理，同时可以控制光标的位置
+      return {
+        value: value.replace(/11/g, '2'),
+        cursor: pos
+      }
+
+      // 或者直接返回字符串,光标在最后边
+      // return value.replace(/11/g,'2'),
+    },
+
+    bindButton() {
+      var that = this
+      wepy.chooseVideo({
+        sourceType: ['album', 'camera'],
+        maxDuration: 60,
+        camera: 'back',
+        success(res) {
+          that.setData({
+            src: res.tempFilePath
+          })
+        }
+      })
+    },
+    bind() {
+      let self = this
+      wepy.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function(res) {
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+          self.src = res.tempFilePaths[0]
+          self.setData({
+            src: res.tempFilePaths[0]
+          })
+        }
+      })
+    },
+    bindChange: function(e) {
+      const val = e.detail.value
+      this.setData({
+        year: this.data.years[val[0]],
+        month: this.data.months[val[1]],
+        day: this.data.days[val[2]]
+      })
+    },
+
+    audioPlay: function() {
+      this.audioCtx.play()
+    },
+    audioPause: function() {
+      this.audioCtx.pause()
+    },
+    audio14: function() {
+      this.audioCtx.seek(14)
+    },
+    audioStart: function() {
+      this.audioCtx.seek(0)
     }
 
-    // 直接返回对象，可以对输入进行过滤处理，同时可以控制光标的位置
-    return {
-      value: value.replace(/11/g, '2'),
-      cursor: pos
-    }
-
-    // 或者直接返回字符串,光标在最后边
-    // return value.replace(/11/g,'2'),
   }
-
+  onReady(e) {
+    // 使用 wx.createAudioContext 获取 audio 上下文 context
+    this.audioCtx = wepy.createAudioContext('myAudio')
+  }
   noLoad() { }
 }
 

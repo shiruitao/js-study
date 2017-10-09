@@ -1,0 +1,34 @@
+
+  <view>
+    <view class="view">
+      <text>简单2步,选中心动好礼</text>
+      <!-- <view class = "line"></view> -->
+      <view class="row">
+        <image class="photo" src="{{self}}"/>
+        <text class="line"/>
+        <image class="photo" src="{{like}}"/>
+        <text class="line"/>
+        <image class="photo" src="{{finish}}"/>
+      </view>
+      <view class="textorder">
+        <text class="textorder">送给TA</text>
+        <text class="textorder">TA喜欢的</text>
+        <text class="textorder">完成</text>
+      </view>
+      <view>
+        <text class="textoption">送她</text>
+        <text class="textoption">送他</text>
+      </view>
+      <view class="row">
+        <view class="button"><text class="bstyle">自己</text></view>
+        <view class="button"><text class="bstyle">老婆/女票</text></view>
+        <view class="button"><text class="bstyle">姐妹/闺蜜</text></view>
+      </view>
+      <view class="row">
+        <view class="button"><text class="bstyle">妈妈</text></view>
+        <view class="button"><text class="bstyle">长辈</text></view>
+        <view class="button"><text class="bstyle">同事</text></view>
+      </view>
+      <view class="end"><text class="texttitle">先跳过,随便逛逛 ▶</text></view>
+    </view>
+  </view>

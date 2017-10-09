@@ -1,13 +1,13 @@
 
   <view>
-    <view class="display">
-      <text class="test">姓名：时瑞涛</text>
-      <text class="test">性别：男</text>
-      <text class="test">年龄：{{age}}</text>
-      <text class="test">出生年月：1995-10-10</text>
-      <text class="test">住址：河北省保定</text>
-      <text class="test">学校：华北电力大学科技学院</text>
-      <text class="test">专业班级：计算机14K2</text>
+    <view class="view">
+      <text class="text">姓名：时瑞涛</text>
+      <text class="text">性别：男</text>
+      <text class="text">年龄：{{age}}</text>
+      <text class="text">出生年月：1995-10-10</text>
+      <text class="text">住址：河北省保定</text>
+      <text class="text">学校：华北电力大学科技学院</text>
+      <text class="text">专业班级：计算机14K2</text>
     </view>
     <text class="test">　</text>
     <view class="display">
@@ -53,7 +53,7 @@
       <button formType="reset">Reset</button>
     </form>
     <!--input.wxml-->
-    <input class="input" placeholder="这是一个可以自动聚焦的input" auto-focus/>
+    <!-- <input class="input" placeholder="这是一个可以自动聚焦的input" auto-focus/> -->
 
     <input class="input" placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}"/>
     <button bindtap="bindButtonTap">使得输入框获取焦点</button>
@@ -64,9 +64,55 @@
     <input class="input" bindinput="bindKeyInput" placeholder="输入同步到view中"/>
 
     <input class="input" bindinput="bindReplaceInput" placeholder="连续的两个1会变成2"/>
-    
+
     <input class="input" password type="number" placeholder="password"/>
 
-    <input type="digit" placeholder="带小数点的数字键盘"/>
+    <input class="input" type="digit" placeholder="带小数点的数字键盘"/>
 
+    <input class="input" type="idcard" placeholder="身份证输入键盘"/>
+
+    <input class="input" placeholder-style="color:red" placeholder="占位符字体是红色的"/>
+
+    <view class="container">
+      <video src="{{src}}"/>
+      <button bindtap="bindButton">获取视频</button>
+    </view>
+
+    <view class="container">
+      <image src="{{src}}"/>
+      <button bindtap="bind">图片</button>
+    </view>
+
+    <view class="container">日期选择器</view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{date}}
+      </view>
+    </picker>
+
+    <view>
+      <view>{{year}}年{{month}}月{{day}}日</view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view  wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+
+    <textarea class="input" bindblur="bindTextAreaBlur" auto-height placeholder="自动变高"/>
+
+    <!-- audio.wxml -->
+    <view class="container">
+      <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop/>
+      <button type="primary" bindtap="audioPlay">播放</button>
+      <button type="primary" bindtap="audioPause">暂停</button>
+      <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+      <button type="primary" bindtap="audioStart">回到开头</button>
+    </view>
   </view>
