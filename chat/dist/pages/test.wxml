@@ -1,10 +1,10 @@
 
   <view>
     <view class="view">
-      <text>简单2步,选中心动好礼</text>
+      <text class="text">简单2步,选中心动好礼</text>
       <!-- <view class = "line"></view> -->
       <view class="row">
-        <image class="photo" src="{{self}}"/>
+        <image class="photo" src="{{gift}}"/>
         <text class="line"/>
         <image class="photo" src="{{like}}"/>
         <text class="line"/>
@@ -20,15 +20,35 @@
         <text class="textoption">送他</text>
       </view>
       <view class="row">
-        <view class="button"><text class="bstyle">自己</text></view>
-        <view class="button"><text class="bstyle">老婆/女票</text></view>
-        <view class="button"><text class="bstyle">姐妹/闺蜜</text></view>
+        <view class="button">
+          <image class="buttonpho" src="{{self}}"/>
+          <text class="bstyle">自己</text>
+        </view>
+        <view class="button">
+          <image class="buttonpho" src="{{girl}}"/>
+          <text class="bstyle">老婆/女票</text>
+        </view>
+        <view class="button">
+           <image class="buttonpho" src="{{sister}}"/>
+          <text class="bstyle">姐妹/闺蜜</text>
+        </view>
       </view>
       <view class="row">
-        <view class="button"><text class="bstyle">妈妈</text></view>
-        <view class="button"><text class="bstyle">长辈</text></view>
-        <view class="button"><text class="bstyle">同事</text></view>
+        <view class="button">
+           <image class="buttonpho" src="{{mom}}"/>
+          <text class="bstyle">妈妈</text>
+        </view>
+        <view class="button">
+           <image class="buttonpho" src="{{elder}}"/>
+          <text class="bstyle">长辈</text>
+        </view>
+        <view class="button">
+           <image class="buttonpho" src="{{colleague}}"/>
+          <text class="bstyle">同事</text>
+        </view>
       </view>
-      <view class="end"><text class="texttitle">先跳过,随便逛逛 ▶</text></view>
+      <view class="end">
+        <text class="texttitle">先跳过,随便逛逛 ▶</text>
+      </view>
     </view>
   </view>

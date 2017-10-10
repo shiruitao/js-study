@@ -35,9 +35,16 @@ var Index = function (_wepy$page) {
       navigationBarTitleText: '礼物说'
     }, _this.data = {
       src: '',
-      self: '../image/1.jpg',
-      like: '../image/2.jpg',
-      finish: '../image/3.jpg'
+      gift: '../image/人头.svg',
+      like: '../image/礼包.svg',
+      finish: '../image/完成.svg',
+      self: '../image/相机.svg',
+      girl: '../image/戒指.svg',
+      sister: '../image/口红.svg',
+      mom: '../image/花束.svg',
+      elder: '../image/长辈.svg',
+      colleague: '../image/钱包.svg'
+
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -47,4 +54,4 @@ var Index = function (_wepy$page) {
 
 Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/test'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsInNyYyIsInNlbGYiLCJsaWtlIiwiZmluaXNoIiwicGFnZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUNBOzs7Ozs7Ozs7Ozs7SUFDcUJBLEs7Ozs7Ozs7Ozs7Ozs7O29MQUNuQkMsTSxHQUFTO0FBQ1BDLDhCQUF3QjtBQURqQixLLFFBR1RDLEksR0FBTztBQUNMQyxXQUFLLEVBREE7QUFFTEMsWUFBTSxnQkFGRDtBQUdMQyxZQUFNLGdCQUhEO0FBSUxDLGNBQVE7QUFKSCxLOzs7O0VBSjBCLGVBQUtDLEk7O2tCQUFuQlIsSyIsImZpbGUiOiJ0ZXN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+ekvOeJqeivtCdcbiAgfVxuICBkYXRhID0ge1xuICAgIHNyYzogJycsXG4gICAgc2VsZjogJy4uL2ltYWdlLzEuanBnJyxcbiAgICBsaWtlOiAnLi4vaW1hZ2UvMi5qcGcnLFxuICAgIGZpbmlzaDogJy4uL2ltYWdlLzMuanBnJ1xuICB9XG59XG4iXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsInNyYyIsImdpZnQiLCJsaWtlIiwiZmluaXNoIiwic2VsZiIsImdpcmwiLCJzaXN0ZXIiLCJtb20iLCJlbGRlciIsImNvbGxlYWd1ZSIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7O0lBQ3FCQSxLOzs7Ozs7Ozs7Ozs7OztvTEFDbkJDLE0sR0FBUztBQUNQQyw4QkFBd0I7QUFEakIsSyxRQUdUQyxJLEdBQU87QUFDTEMsV0FBSyxFQURBO0FBRUxDLFlBQU0saUJBRkQ7QUFHTEMsWUFBTSxpQkFIRDtBQUlMQyxjQUFRLGlCQUpIO0FBS0xDLFlBQU0saUJBTEQ7QUFNTEMsWUFBTSxpQkFORDtBQU9MQyxjQUFRLGlCQVBIO0FBUUxDLFdBQUssaUJBUkE7QUFTTEMsYUFBTyxpQkFURjtBQVVMQyxpQkFBVzs7QUFWTixLOzs7O0VBSjBCLGVBQUtDLEk7O2tCQUFuQmQsSyIsImZpbGUiOiJ0ZXN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+ekvOeJqeivtCdcbiAgfVxuICBkYXRhID0ge1xuICAgIHNyYzogJycsXG4gICAgZ2lmdDogJy4uL2ltYWdlL+S6uuWktC5zdmcnLFxuICAgIGxpa2U6ICcuLi9pbWFnZS/npLzljIUuc3ZnJyxcbiAgICBmaW5pc2g6ICcuLi9pbWFnZS/lrozmiJAuc3ZnJyxcbiAgICBzZWxmOiAnLi4vaW1hZ2Uv55u45py6LnN2ZycsXG4gICAgZ2lybDogJy4uL2ltYWdlL+aIkuaMhy5zdmcnLFxuICAgIHNpc3RlcjogJy4uL2ltYWdlL+WPo+e6oi5zdmcnLFxuICAgIG1vbTogJy4uL2ltYWdlL+iKseadny5zdmcnLFxuICAgIGVsZGVyOiAnLi4vaW1hZ2Uv6ZW/6L6ILnN2ZycsXG4gICAgY29sbGVhZ3VlOiAnLi4vaW1hZ2Uv6ZKx5YyFLnN2ZydcblxuICB9XG59XG4iXX0=

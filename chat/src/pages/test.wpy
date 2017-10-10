@@ -3,21 +3,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  
 }
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin: 10px 8px 5px 8px;
-  flex: 1;
+  margin: 15px 1px 1px 5px; // flex: 1;
 }
+
 .rows {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 10px 8px 5px 8px;
-  flex: 1;
 }
+
 .texttitle {
   font-size: 10px;
   align-items: center;
@@ -25,46 +27,53 @@
 
 .textorder {
   margin: 1px 8px 50px 8px;
-  font-size: 10px;
-  // flex: 1
+  font-size: 10px; // flex: 1
+}
+.viewoption {
+  margin: 10px;
 }
 .textoption {
-  margin: 1px 10px 10px 20px;
-  font-size: 15px;
-  // flex: 1
+  margin: 20px;
+  font-size: 15px; // flex: 1
 }
+
 .line {
   height: 1px;
   width: 30px;
-  background-color: black ;
+  background-color: black;
 }
+
 .photo {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   height: 20px;
   width: 20px;
-  border: 1px solid black;
-  border-radius: 50%;
-  //  margin: 15px 10px 5px 20px;
+  border: 1px solid grey;
+  border-radius: 50%; //  margin: 15px 10px 5px 20px;
 }
+
+.buttonpho {
+  padding-top: 10px;
+  height: 40px;
+  width: 85px;
+}
+
 .button {
-  margin: 1px 5px 10px 5px;
-  // font-size: 20px;
+  margin: 1px 5px 5px 5px; // font-size: 20px;
   height: 80px;
   width: 80px;
   background-color: lightpink;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.bstyle {
-  font-size: 10px; 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  flex-direction: column; // justify-content: center;
 }
+
+.bstyle {
+  font-size: 10px;
+  display: flex;
+  justify-content: center; // align-items : center;
+  padding-top: 10px;
+}
+
 .end {
   margin: 100px 1px 1px 5px;
 }
@@ -73,35 +82,55 @@
 <template>
   <view>
     <view class="view">
-      <text>简单2步,选中心动好礼</text>
+      <text class = "text">简单2步,选中心动好礼</text>
       <!-- <view class = "line"></view> -->
-      <view class = "row">
-        <image class = "photo" src = "{{self}}"/>
-        <text class = "line"/>
-        <image class = "photo" src = "{{like}}"/>
-        <text class = "line"/>
-        <image class = "photo" src = "{{finish}}"/>
+      <view class="row">
+        <image class="photo" src="{{gift}}" />
+        <text class="line" />
+        <image class="photo" src="{{like}}" />
+        <text class="line" />
+        <image class="photo" src="{{finish}}" />
       </view>
-      <view class = "textorder">
+      <view class="textorder">
         <text class="textorder">送给TA</text>
         <text class="textorder">TA喜欢的</text>
         <text class="textorder">完成</text>
       </view>
       <view>
-        <text class = "textoption">送她</text>
-        <text class = "textoption">送他</text>
+        <text class="textoption">送她</text>
+        <text class="textoption">送他</text>
       </view>
-      <view class = "row">
-        <view class = "button"><text class = "bstyle">自己</text></view>
-        <view class = "button"><text class = "bstyle">老婆/女票</text></view>
-        <view class = "button"><text class = "bstyle">姐妹/闺蜜</text></view>
+      <view class="row">
+        <view class="button">
+          <image class="buttonpho" src="{{self}}" />
+          <text class="bstyle">自己</text>
+        </view>
+        <view class="button">
+          <image class="buttonpho" src="{{girl}}" />
+          <text class="bstyle">老婆/女票</text>
+        </view>
+        <view class="button">
+           <image class = "buttonpho" src = "{{sister}}"/>
+          <text class="bstyle">姐妹/闺蜜</text>
+        </view>
       </view>
-      <view class = "row">
-        <view class = "button"><text class = "bstyle">妈妈</text></view>
-        <view class = "button"><text class = "bstyle">长辈</text></view>
-        <view class = "button"><text class = "bstyle">同事</text></view>
+      <view class="row">
+        <view class="button">
+           <image class = "buttonpho" src = "{{mom}}"/>
+          <text class="bstyle">妈妈</text>
+        </view>
+        <view class="button">
+           <image class = "buttonpho" src = "{{elder}}"/>
+          <text class="bstyle">长辈</text>
+        </view>
+        <view class="button">
+           <image class = "buttonpho" src = "{{colleague}}"/>
+          <text class="bstyle">同事</text>
+        </view>
       </view>
-      <view class = "end"><text class = "texttitle">先跳过,随便逛逛 ▶</text></view>
+      <view class="end">
+        <text class="texttitle">先跳过,随便逛逛 ▶</text>
+      </view>
     </view>
   </view>
 </template>
@@ -114,9 +143,16 @@ export default class Index extends wepy.page {
   }
   data = {
     src: '',
-    self: '../image/1.jpg',
-    like: '../image/2.jpg',
-    finish: '../image/3.jpg'
+    gift: '../image/人头.svg',
+    like: '../image/礼包.svg',
+    finish: '../image/完成.svg',
+    self: '../image/相机.svg',
+    girl: '../image/戒指.svg',
+    sister: '../image/口红.svg',
+    mom: '../image/花束.svg',
+    elder: '../image/长辈.svg',
+    colleague: '../image/钱包.svg'
+
   }
 }
 </script>
