@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _wepy = require('./../npm/wepy/lib/wepy.js');
 
 var _wepy2 = _interopRequireDefault(_wepy);
@@ -44,9 +46,13 @@ var Index = function (_wepy$page) {
       mom: '../image/花束.svg',
       elder: '../image/长辈.svg',
       colleague: '../image/钱包.svg'
-
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
+
+  _createClass(Index, [{
+    key: 'onload',
+    value: function onload() {}
+  }]);
 
   return Index;
 }(_wepy2.default.page);
@@ -54,4 +60,4 @@ var Index = function (_wepy$page) {
 
 Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/test'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsInNyYyIsImdpZnQiLCJsaWtlIiwiZmluaXNoIiwic2VsZiIsImdpcmwiLCJzaXN0ZXIiLCJtb20iLCJlbGRlciIsImNvbGxlYWd1ZSIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7O0lBQ3FCQSxLOzs7Ozs7Ozs7Ozs7OztvTEFDbkJDLE0sR0FBUztBQUNQQyw4QkFBd0I7QUFEakIsSyxRQUdUQyxJLEdBQU87QUFDTEMsV0FBSyxFQURBO0FBRUxDLFlBQU0saUJBRkQ7QUFHTEMsWUFBTSxpQkFIRDtBQUlMQyxjQUFRLGlCQUpIO0FBS0xDLFlBQU0saUJBTEQ7QUFNTEMsWUFBTSxpQkFORDtBQU9MQyxjQUFRLGlCQVBIO0FBUUxDLFdBQUssaUJBUkE7QUFTTEMsYUFBTyxpQkFURjtBQVVMQyxpQkFBVzs7QUFWTixLOzs7O0VBSjBCLGVBQUtDLEk7O2tCQUFuQmQsSyIsImZpbGUiOiJ0ZXN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+ekvOeJqeivtCdcbiAgfVxuICBkYXRhID0ge1xuICAgIHNyYzogJycsXG4gICAgZ2lmdDogJy4uL2ltYWdlL+S6uuWktC5zdmcnLFxuICAgIGxpa2U6ICcuLi9pbWFnZS/npLzljIUuc3ZnJyxcbiAgICBmaW5pc2g6ICcuLi9pbWFnZS/lrozmiJAuc3ZnJyxcbiAgICBzZWxmOiAnLi4vaW1hZ2Uv55u45py6LnN2ZycsXG4gICAgZ2lybDogJy4uL2ltYWdlL+aIkuaMhy5zdmcnLFxuICAgIHNpc3RlcjogJy4uL2ltYWdlL+WPo+e6oi5zdmcnLFxuICAgIG1vbTogJy4uL2ltYWdlL+iKseadny5zdmcnLFxuICAgIGVsZGVyOiAnLi4vaW1hZ2Uv6ZW/6L6ILnN2ZycsXG4gICAgY29sbGVhZ3VlOiAnLi4vaW1hZ2Uv6ZKx5YyFLnN2ZydcblxuICB9XG59XG4iXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsInNyYyIsImdpZnQiLCJsaWtlIiwiZmluaXNoIiwic2VsZiIsImdpcmwiLCJzaXN0ZXIiLCJtb20iLCJlbGRlciIsImNvbGxlYWd1ZSIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNBOzs7Ozs7Ozs7Ozs7SUFDcUJBLEs7Ozs7Ozs7Ozs7Ozs7O29MQUNuQkMsTSxHQUFTO0FBQ1BDLDhCQUF3QjtBQURqQixLLFFBR1RDLEksR0FBTztBQUNMQyxXQUFLLEVBREE7QUFFTEMsWUFBTSxpQkFGRDtBQUdMQyxZQUFNLGlCQUhEO0FBSUxDLGNBQVEsaUJBSkg7QUFLTEMsWUFBTSxpQkFMRDtBQU1MQyxZQUFNLGlCQU5EO0FBT0xDLGNBQVEsaUJBUEg7QUFRTEMsV0FBSyxpQkFSQTtBQVNMQyxhQUFPLGlCQVRGO0FBVUxDLGlCQUFXO0FBVk4sSzs7Ozs7NkJBWUUsQ0FBRzs7OztFQWhCcUIsZUFBS0MsSTs7a0JBQW5CZCxLIiwiZmlsZSI6InRlc3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcbmltcG9ydCB3ZXB5IGZyb20gJ3dlcHknXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBJbmRleCBleHRlbmRzIHdlcHkucGFnZSB7XG4gIGNvbmZpZyA9IHtcbiAgICBuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0OiAn56S854mp6K+0J1xuICB9XG4gIGRhdGEgPSB7XG4gICAgc3JjOiAnJyxcbiAgICBnaWZ0OiAnLi4vaW1hZ2Uv5Lq65aS0LnN2ZycsXG4gICAgbGlrZTogJy4uL2ltYWdlL+ekvOWMhS5zdmcnLFxuICAgIGZpbmlzaDogJy4uL2ltYWdlL+WujOaIkC5zdmcnLFxuICAgIHNlbGY6ICcuLi9pbWFnZS/nm7jmnLouc3ZnJyxcbiAgICBnaXJsOiAnLi4vaW1hZ2Uv5oiS5oyHLnN2ZycsXG4gICAgc2lzdGVyOiAnLi4vaW1hZ2Uv5Y+j57qiLnN2ZycsXG4gICAgbW9tOiAnLi4vaW1hZ2Uv6Iqx5p2fLnN2ZycsXG4gICAgZWxkZXI6ICcuLi9pbWFnZS/plb/ovoguc3ZnJyxcbiAgICBjb2xsZWFndWU6ICcuLi9pbWFnZS/pkrHljIUuc3ZnJ1xuICB9XG4gIG9ubG9hZCgpIHsgfVxufVxuIl19
