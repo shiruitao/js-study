@@ -31,7 +31,7 @@
         </view>
         <view class="button">
           <image class="buttonpho" src="{{girl}}"/>
-          <text class="bstyle">老婆/女票</text>
+          <text class="bstyle">{{wife}}</text>
         </view>
         <view class="button">
           <image class="buttonpho" src="{{sister}}"/>

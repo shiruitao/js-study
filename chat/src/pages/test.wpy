@@ -137,7 +137,7 @@ epxsoild
         </view>
         <view class="button">
           <image class="buttonpho" src="{{girl}}" />
-          <text class="bstyle">老婆/女票</text>
+          <text class="bstyle">{{wife}}</text>
         </view>
         <view class="button">
           <image class="buttonpho" src="{{sister}}" />
@@ -187,7 +187,8 @@ export default class Index extends wepy.page {
     color: '',
     colorshe: 'red',
     solidshe: 'red',
-    solidhe: 'white'
+    solidhe: 'white',
+    wife: '老婆/女票'
   }
   methods = {
     she() {
@@ -200,6 +201,7 @@ export default class Index extends wepy.page {
       self.solidshe = 'red'
       self.solidhe = 'white'
       self.color = 'black'
+      self.wife = '老婆/女票'
     },
     he() {
       let self = this
@@ -211,6 +213,7 @@ export default class Index extends wepy.page {
       self.solidhe = 'red'
       self.solidshe = 'white'
       self.colorshe = 'black'
+      self.wife = '老公/男票'
     }
   }
   onload() { }
