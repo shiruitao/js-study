@@ -1,25 +1,28 @@
 
   <view>
     <view class="view">
-      <text>简单2步,选中心动好礼</text>
-      <!-- <view class = "line"></view> -->
-      <view class="title">
+      <text style="font-size: 20px">简单2步,选中心动好礼</text>
+      <view class="column">
         <view class="row">
-          <image class="photo" src="{{gift}}"/>
+          <view class="column">
+            <image class="photo" src="{{gift}}"/>
+            <text class="textorder">送给TA</text>
+          </view>
           <text class="line"/>
-          <image class="photo" src="{{like}}"/>
+          <view class="column">
+            <image class="photo" src="{{like}}"/>
+            <text class="textorder">TA喜欢的</text>
+          </view>
           <text class="line"/>
-          <image class="photo" src="{{finish}}"/>
-        </view>
-        <view class="textorder">
-          <text class="textorder">送给TA</text>
-          <text class="textorder">TA喜欢的</text>
-          <text class="textorder">完成</text>
+          <view class="column">
+            <image class="photo" src="{{finish}}"/>
+            <text class="textorder">　完成　</text>
+          </view>
         </view>
       </view>
       <view class="rows">
-        <text class="textoption">送她</text>
-        <text class="textoption">送他</text>
+        <text class="textoption" bindtap="she" style="color: {{colorshe}}; border-bottom: 3px solid {{solidshe}}">送她 </text>
+        <text class="textoption" bindtap="he" style="color: {{color}}; border-bottom: 3px solid {{solidhe}}" solid-bottom="solidhe">送他</text>
       </view>
       <view class="row">
         <view class="button">
@@ -32,13 +35,13 @@
         </view>
         <view class="button">
           <image class="buttonpho" src="{{sister}}"/>
-          <text class="bstyle">姐妹/闺蜜</text>
+          <text class="bstyle">{{sist}}</text>
         </view>
       </view>
       <view class="row">
         <view class="button">
           <image class="buttonpho" src="{{mom}}"/>
-          <text class="bstyle">妈妈</text>
+          <text class="bstyle">{{parent}}</text>
         </view>
         <view class="button">
           <image class="buttonpho" src="{{elder}}"/>
