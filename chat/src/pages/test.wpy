@@ -103,7 +103,6 @@
 }
 
 </style>
-epxsoild
 <template>
   <view>
     <view class="view">
@@ -172,7 +171,6 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '礼物说'
   }
   data = {
-    src: '',
     gift: '../image/人头.svg',
     like: '../image/礼包.svg',
     finish: '../image/完成.svg',

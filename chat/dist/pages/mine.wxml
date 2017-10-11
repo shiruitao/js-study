@@ -1,0 +1,22 @@
+
+  <view>
+    <view class="viewsearch">
+      <text>留搜索框</text>
+    </view>
+    <view class="viewphoto">
+      <text>广告图片</text>
+    </view>
+
+    <view class="bottomfix">
+      <view class="viewbottomfix">
+        <text class="textbottomfix">首页</text>
+      </view>
+      <view class="viewbottomfix">
+        <text class="textbottomfix">购物车</text>
+      </view>
+      <view class="viewbottomfix">
+        <text class="textbottomfix">个人</text>
+      </view>
+    </view>
+
+  </view>
