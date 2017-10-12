@@ -4,18 +4,20 @@
       <text>留搜索框</text>
     </view>
     <view class="viewphoto">
-      <text>广告图片</text>
+      <image class="viewphoto" src="{{photoposter}}"/>
     </view>
-
     <view class="bottomfix">
-      <view class="viewbottomfix">
-        <text class="textbottomfix">首页</text>
+      <view class="viewbottomfix" bindtap="hometap" style="color:{{homecolor}}">
+        <image class="photobottomfix" src="{{photohome}}"/>
+        <text class="textbottomfix">{{titlehome}}</text>
       </view>
-      <view class="viewbottomfix">
-        <text class="textbottomfix">购物车</text>
+      <view class="viewbottomfix" bindtap="shoptap" style="color:{{shopcolor}}">
+        <image class="photobottomfix" src="{{photoshop}}"/>
+        <text class="textbottomfix">{{titleshop}}</text>
       </view>
-      <view class="viewbottomfix">
-        <text class="textbottomfix">个人</text>
+      <view class="viewbottomfix" bindtap="mytap" style="color:{{mycolor}}">
+        <image class="photobottomfix" src="{{photomy}}"/>
+        <text class="textbottomfix">{{titlemy}}</text>
       </view>
     </view>
 
